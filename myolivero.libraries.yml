@@ -1,0 +1,11 @@
+custom:
+  version: 1.0
+  css:
+    theme:
+      css/custom.css: {}
+  js:
+    js/custom.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once
