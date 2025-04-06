@@ -1,0 +1,20 @@
+/* Responsive sidebar layout */
+@media (min-width: 992px) {
+  .layout-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+  }
+  
+  .layout-sidebar-left {
+    position: sticky;
+    top: 2rem;
+    height: min-content;
+  }
+}
+
+.top-banner-region {
+  background: #f3f4f6;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
