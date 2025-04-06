@@ -1,0 +1,14 @@
+name: 'MyOlivero'
+description: 'Enhanced sub-theme of Olivero with additional regions'
+core_version_requirement: ^10
+type: theme
+base theme: olivero
+regions:
+  top_banner: 'Top Banner'
+  logo: 'Logo'
+  navigation_menu: 'Main Navigation'
+  left_sidebar: 'Left Sidebar'
+  content: 'Content'
+  footer: 'Footer'
+libraries:
+  - myolivero/custom
