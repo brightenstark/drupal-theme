@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Override of Olivero's page template with additional regions.
+ */
+#}
+{{ attach_library('myolivero/custom') }}
+
+{% extends "@olivero/layout/page.html.twig" %}
+
+{% block header %}
+  {% if page.top_banner %}
+    <div class="top-banner-region">
+      {{ page.top_banner }}
+    </div>
+  {% endif %}
+  
+  {{ parent() }}
+{% endblock %}
+
+{% block content %}
+  <div class="layout-container">
+    <div class="row">
+      {% if page.left_sidebar %}
+        <aside class="layout-sidebar-left" role="complementary">
+          {{ page.left_sidebar }}
+        </aside>
+      {% endif %}
+      
+      <main class="layout-main" role="main">
+        {{ parent() }}
+      </main>
+    </div>
+  </div>
+{% endblock %}
