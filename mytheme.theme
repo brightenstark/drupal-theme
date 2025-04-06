@@ -1,0 +1,24 @@
+<?php
+
+
+
+use Drupal\Core\Template\Attribute;
+
+
+function mytheme_preprocess_page(&$variables) {
+  // Add mobile menu toggle button
+  $variables['mobile_menu_toggle'] = [
+    '#type' => 'html_tag',
+    '#tag' => 'button',
+    '#attributes' => [
+      'class' => ['navbar-toggler', 'd-lg-none'],
+      'type' => 'button',
+      'data-bs-toggle' => 'collapse',
+      'data-bs-target' => '#main-navigation',
+      'aria-controls' => 'main-navigation',
+      'aria-expanded' => 'false',
+      'aria-label' => 'Toggle navigation',
+    ],
+    '#value' => '<span class="navbar-toggler-icon"></span>',
+  ];
+}
