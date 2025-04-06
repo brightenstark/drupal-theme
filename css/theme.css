@@ -1,0 +1,38 @@
+/* Mobile-first responsive base */
+.theme-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content-wrapper {
+  flex: 1;
+}
+
+/* Mobile menu adjustments */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    padding: 1rem;
+    background: #f8f9fa;
+    margin-top: 0.5rem;
+  }
+  
+  .sidebar-left {
+    margin-top: 2rem;
+  }
+}
+
+/* Accessibility enhancements */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+}
+
+.skip-link:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
