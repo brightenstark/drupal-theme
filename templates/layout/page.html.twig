@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * Custom page template with responsive layout.
+ */
+#}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    <head-placeholder token="{{ placeholder_token }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token }}">
+    <js-placeholder token="{{ placeholder_token }}">
+  </head>
+
+  <body{{ attributes.addClass('theme-body') }}>
+    <a href="#main-content" class="visually-hidden focusable skip-link">
+      {{ 'Skip to main content'|t }}
+    </a>
+
+    <div class="layout-container">
+      {% if page.top_banner %}
+        <header class="top-banner" role="banner">
+          {{ page.top_banner }}
+        </header>
+      {% endif %}
+
+      <nav class="navbar navbar-expand-lg bg-body-tertiary" aria-label="Main navigation">
+        <div class="container">
+          {{ page.logo }}
+          {{ mobile_menu_toggle }}
+          <div class="collapse navbar-collapse" id="main-navigation">
+            {{ page.navigation_menu }}
+          </div>
+        </div>
+      </nav>
+
+      <div class="container main-content-wrapper">
+        <div class="row gx-5">
+          {% if page.left_sidebar %}
+            <aside class="col-lg-3 sidebar-left" role="complementary">
+              {{ page.left_sidebar }}
+            </aside>
+          {% endif %}
+
+          <main class="col-lg-9" role="main" id="main-content">
+            {{ page.content }}
+          </main>
+        </div>
+      </div>
+
+      {% if page.footer %}
+        <footer class="site-footer mt-auto" role="contentinfo">
+          <div class="container">
+            {{ page.footer }}
+          </div>
+        </footer>
+      {% endif %}
+    </div>
+    <js-bottom-placeholder token="{{ placeholder_token }}">
+  </body>
+</html>
